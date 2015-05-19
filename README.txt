@@ -1,5 +1,7 @@
 ************************** SoyKB WorkFlow Monitoring System*****************************
 
+Pegasus Workflow Management System and NaradaMetrics Monitoring System Integration script for Soybean Knowledge Base
+
 This is an independent module of NaradaMetrics specifically written for SoyKB workflow monitoring. This module can be considered as specific user defined custom metrics and communicates with NaradaMetrics CIS (central information system) in an active way by sending the measurement data to CIS without affecting its internal task scheduler. The Pegasus workflow is processed in the worker nodes in the TACC super computer center, monitoring system (workflow.isi.edu) is only responsible for receiving and sending the monitoring information. 
 
 For the details of software defined application monitoring platform NaradaMetrics, please see http://www.naradametrics.com/
