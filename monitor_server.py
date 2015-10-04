@@ -7,7 +7,6 @@ import threading
 import multiprocessing
 pegasus_path = ""
 
-
 #This is a subclass of multiprocessing.Process. The main process does not wait until the subprocess to finish its task
 # since the monitoring may take up to several days to finish.  Instead, it continues to listens on the port 8888 to get
 # task requests and create multiple threads to handle the monitoring of single workflow.
