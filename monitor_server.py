@@ -43,6 +43,15 @@ class startMonitoring(multiprocessing.Process):
             print pegasus_path
             if result['percent_done'] == 100.0:
                 flag = False
+#thead list for different monitoring tasks.
+threads = []
+#Use xmlrpc protocol for server-client communication.
+server = SimpleXMLRPCServer(("localhost", 8888))
+print "Listening on port 8888..."
+#Register the add_task function for adding different monitoring tasks.
+server.register_function(add_task, "add_task")
+#Run forever until the KeyboardInterrupt event. Press control+c to terminate.
+server.serve_forever()
 
 def add_task(path):
     global pegasus_path
@@ -58,13 +67,5 @@ def add_task(path):
     print path
     return "Client"
 
-#thead list for different monitoring tasks.
-threads = []
-#Use xmlrpc protocol for server-client communication.
-server = SimpleXMLRPCServer(("localhost", 8888))
-print "Listening on port 8888..."
-#Register the add_task function for adding different monitoring tasks.
-server.register_function(add_task, "add_task")
-#Run forever until the KeyboardInterrupt event. Press control+c to terminate.
-server.serve_forever()
+
 
